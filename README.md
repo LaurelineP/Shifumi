@@ -1,10 +1,10 @@
-#Shifumi Game
-##Description:
+# Shifumi Game
+## Description:
 Build a "Shifumi Game" also known as "Rock Paper Scisors Game".\
 
-##Goal:
+## Goal:
 
-##Technos:
+## Technos:
 + HTML
 + CSS
 + JavaScript
