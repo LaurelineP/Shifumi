@@ -9,23 +9,19 @@
 <body>
     <div class="container">
         <div class="scores">
-            <span class="user-score"></span>
-            <span class="cpu-score"></span>
+            <span class="user-score">0</span>
+            <span class="cpu-score">0</span>
         </div>
 
         <div class="board">
 
         </div>
-        <select name="rounds" id="rounds">
-            <option value="unlimited">unlimited rounds</option>
-            <option value="3">3 rounds</option>
-        </select>
         <input type="checkbox" name="optional-round" id="optional-round">
         <label for="optional-round">3 rounds</label>
         <div class="weapons">
-            <button class="rock">rock</button>
-            <button class="paper">paper</button>
-            <button class="scissor">scissors</button>
+            <button class="rock" type="button" name="rock" onclick="playerSelection()">rock</button>
+            <button class="paper" type="button" name="paper" onclick="playerSelection()">paper</button>
+            <button class="scissors" type="button" name="scissors" onclick="playerSelection()">scissors</button>
         </div>
 
         <button class="reset">Reset</button>
@@ -58,5 +54,10 @@
                 </div>
         </div>
     </div>
+    <script
+        src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script src="./js/shifumi.js"></script>
 </body>
 </html>
