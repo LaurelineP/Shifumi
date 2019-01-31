@@ -35,7 +35,6 @@ a:visited, a:link {
 .scores {
     width: 300px;
     margin: 0 auto;
-    margin-bottom: 2%;
     text-align: center;
     font-size: 5em;
     line-height: 1.5;
@@ -90,14 +89,6 @@ a:visited, a:link {
     width: 100px;
     border-radius: 50px;
     margin: 0 15px;
-}
-
-.modal-content {
-    visibility: hidden;
-}
-
-.modal-content.show {
-    visibility: visible;
 }
 
 .resetScore {
@@ -202,4 +193,30 @@ input#collapseRules, input#collapseOrigins {
    top: -15px;
    font-weight: bold;
    font-style: normal;
+}
+
+.modal-container {
+    position: absolute;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    background: rgba(0,0,0,0.95);
+    visibility: hidden;
+}
+
+.modal-container.show {
+    visibility: visible;
+    position: absolute;
+    top: 0;
+    overflow-y: hidden;
+}
+
+.modal-content {
+    margin: 10% 28%;
+}
+
+.modal-content p {
+    color: #fff;
+    text-align: center;
+    font-size: 2em;
 }

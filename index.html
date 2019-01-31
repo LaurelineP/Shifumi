@@ -18,11 +18,7 @@
             <div class="score"><span class="user-score">0</span></div> <span>-</span> 
             <div class="score"><span class="cpu-score">0</span></div>
         </div>
-        <div class="board">
-            <div class="modal-content">
-                <img class="feedbackhell" src="./assets/---.gif"/>
-            </div>
-        </div>
+        <div class="board"></div>
         <div class="weapons">
             <button class="rock" type="button" name="rock" onclick="playerSelection()">rock</button>
             <button class="paper" type="button" name="paper" onclick="playerSelection()">paper</button>
@@ -61,8 +57,14 @@
                             <a class="shifumi-example" href="https://www.youtube.com/watch?v=eOlIKMruyUo">comic bit</a>
                         </div>
                 </article>
+            </section>
         </div>
-    </section>
+        <div class="modal-container" onclick="closeModal()">
+            <div class="modal-content">
+                <img class="feedbackhell" src="./assets/---.gif"/>
+                <p>You just lost 0-3 Human!</p>
+            </div>
+        </div>
     <script
         src="https://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="

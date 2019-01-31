@@ -60,8 +60,15 @@ function resetScore() {
 
 function polyOwned() {
     if(scores.cpu === 3 && scores.user === 0){
-        $('.modal-content').addClass('show');
+        $('.modal-container').addClass('show');
     }
+    setTimeout(() => {
+        $('.modal-container').removeClass('show');
+    }, 300);
+}
+
+function closeModal() {
+    $('.modal-container').css('visibility', 'hidden');
 }
 
 document.querySelector('.resetScore').addEventListener('click', () => {
