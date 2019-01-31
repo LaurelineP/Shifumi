@@ -4,20 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/style.css">
     <title>Shifumi Game</title>
 </head>
 <body>
     <div class="container">
+        <p class="message"></p>
         <div class="scores">
-            <span class="user-score">0</span>
-            <span class="cpu-score">0</span>
+            <p><span class="user-score">0</span> - <span class="cpu-score">0</span></p>
         </div>
-
         <div class="board">
-
+            <div class="modal-content">
+                <div class="feedbackhell"></div>
+            </div>
         </div>
-        <input type="checkbox" name="optional-round" id="optional-round">
-        <label for="optional-round">3 rounds</label>
         <div class="weapons">
             <button class="rock" type="button" name="rock" onclick="playerSelection()">rock</button>
             <button class="paper" type="button" name="paper" onclick="playerSelection()">paper</button>
@@ -27,8 +27,8 @@
         <button class="reset">Reset</button>
 
         <div class="colapsible-more-info">
-            <input type="checkbox" name="moreInfo" id="moreInfo">
-            <label for="moreInfo">Rules and infos</label>
+            <input type="checkbox" name="colapseInput" id="colapseInput">
+            <label for="colapseInput">Rules and infos</label>
                 <div class="rules">
                     <h3>3 simple rules:</h3>
                     <ul>

@@ -1,0 +1,7 @@
+.modal-content{
+    visibility: hidden;
+}
+
+.modal-content.show{
+    visibility: visible;
+}
