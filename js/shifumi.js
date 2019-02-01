@@ -5,7 +5,7 @@ let messages = {
     lost : ['Ohhh, sorry... or not.', 'Maybe next time?!', 'Keep trying...', `I'm afraid you just lost...`, 'Ahhhh... Nope, you lost!', 'The computer seems to be smarter than a human.', 'Bouuuuyyyaaahh!!','Poly owned!'],
     draw : ['No wins, no losses.', 'Draw! Play again?!', 'And this is... uh?! A tie.', `It's a tie!`, 'Same weapon, duh!', `Next time will be the good one?`, 'One more chance, yeahh!', 'Noooooooooooo, a draw!']
 }
-
+let tracks = [];
 $('document').ready( function(){
     $('.message').html(generateMessage('play'));
 })
@@ -17,13 +17,17 @@ function generateMessage( status ) {
 
 function computerPlay() {
     let weapons = [ 'rock', 'paper', 'scissors'];
-    let random = Math.floor( Math.random() * weapons.length) ;
+    let random = Math.floor( Math.random() * weapons.length );
     return weapons[random];
 }
 
 function playerSelection() {
-    let selection = event.target.name;
-    $('.message').html( versusResult( selection, computerPlay() ) );
+    let usrWeapon = event.target.name;
+    let botWeapon = computerPlay()
+    $('.message').html( versusResult( usrWeapon, botWeapon ) );
+    createEmote( 'user', usrWeapon );
+    createEmote( 'bot', botWeapon );
+
     setScores();
 }
 
@@ -34,28 +38,43 @@ function setScores() {
 }
 
 function versusResult( userWeapon, computerWeapon ) {
-    if( userWeapon === computerWeapon){
+    if( userWeapon === computerWeapon ) {
+        keepTracks( 'tie', userWeapon );
          return generateMessage('draw');
     } else {
         let  usrRockWin = userWeapon === 'rock' && computerWeapon === 'scissors',
                 usrScissorsWin = userWeapon === 'scissors' && computerWeapon === 'paper',
                 usrPaperWin = userWeapon === 'paper' && computerWeapon === 'rock';
 
-        if(usrRockWin || usrScissorsWin || usrPaperWin ){
+        if ( usrRockWin || usrScissorsWin || usrPaperWin ){
             scores.user++;
+            keepTracks( 'You', userWeapon, computerWeapon )
             polyOwned();
             return generateMessage('win');
         } else {
             scores.cpu++;
+            keepTracks( 'IBot', userWeapon, computerWeapon )
             polyOwned();
             return generateMessage('lost');
         }
     }
 }
+function createEmote ( player, weapon ) {
+   let emote =  weapon === "rock" ? '🤘🏼' : weapon === "paper" ? '✋🏼' : '✌🏼';
+   $(`.hand-${player}`).html(emote);
+}
 
-function resetScore() {
-    scores.user = scores.cpu = 0;
-    setScores();
+function keepTracks( verdict, userWeapon, botWeapon ){
+    if( verdict === 'tie'){
+        tracks.push(`You both picked "${userWeapon}" — it's a ${verdict} !`)
+    } else if ( verdict === 'You' || verdict === 'IBot' ) {
+        tracks.push(`You picked "${userWeapon}" versus IBot with '${botWeapon}' — ${verdict} wins !`)
+    } else {
+        tracks.push('You put an end to the game.')
+    }
+    for (track of tracks){
+        $('.results-container').append(`<p class="track">${track}</p>`)
+    }
 }
 
 function polyOwned() {
@@ -72,6 +91,7 @@ function closeModal() {
 }
 
 document.querySelector('.resetScore').addEventListener('click', () => {
+    keepTracks( 'reset' );
     scores.user = scores.cpu = 0;
     setScores();
 

@@ -14,11 +14,16 @@
             <span class="player user">You</span> 
             <span class="player bot">IRobot</span>
         </div>
+        <div class="game-playing">
+            <div class="hand-user"></div>
+            <div class="hand-bot"></div>
+        </div>
         <div class="scores">
             <div class="score"><span class="user-score">0</span></div> <span>-</span> 
             <div class="score"><span class="cpu-score">0</span></div>
         </div>
-        <div class="board"></div>
+
+        <!-- <div class="board"></div> -->
         <div class="weapons">
             <button class="rock" type="button" name="rock" onclick="playerSelection()">rock</button>
             <button class="paper" type="button" name="paper" onclick="playerSelection()">paper</button>
@@ -33,38 +38,49 @@
                 <label for="collapseRules" class="title">Three simple rules</label>
                 <article class="rules">
                     <ul>
-                        <li><div class="hand rock emote">🤘🏼</div>Rock wins against scissors.</li>
-                        <li><div class="hand scissors emote">✌🏼</div>Scissors win against paper.</li>
-                        <li><div class="hand paper emote">✋🏼</div>Paper wins against rock.</li>
+                        <li><div class="hand rock emote">🤘🏼</div>Rock smashes Scissors.</li>
+                        <li><div class="hand scissors emote">✌🏼</div>Scissors cuts the Paper.</li>
+                        <li><div class="hand paper emote">✋🏼</div>Paper wraps the Rock.</li>
                     </ul>
                 </artticle>
             </div>
-            <div class="collapsible-block"></div>
+            <div class="collapsible-block">
                 <input type="checkbox" name="collapseOrigins" id="collapseOrigins">
                 <label for="collapseOrigins" class="title">Shifumi's Origins</label>
                 <article class="origins">
-                        <p>"Rock, paper, scissors" in english, "Pierre, Papier (≠ Feuille), Ciseaux" in french, "Jan-Ken-Pon" or "Janken!" in japanese or also know as "Shifumi" is a child but also an adult game.
-                                Dispite the duality aspect of the game it is also played for decisional purpose: let's ask the following question: "Who's washing the dishes tonight ?" Uh ?
-                                You don't want to but neither your roommate or partner, so "Who?" is the question ! Let's settle that with the Shifumi game then! </p>
-            
-                        <p>The origins of this game is mainly from the Asian culture as we could imagine and appearing in the 19th, but why "Shifumi" ?
-                            "Shifumi" actually came from "Hi-Fu-Mi", which corresponds to "hito" (one) "futa" (two) and "misu" (three) in japanese even though, in Japan the game is named Jan-Ken-Pon or Janken as mentionned earlier.
-                            But ...( always a "but" ) according to a Xiè Zhàozhì book, the lords from the Han dynasty were playing a similar game named "shǒushìlìng".
-                            That's it for your culture G today. Enjoy the game!
-                        </p>
-                        <div class="link">
-                            <span class="emote">🖇</span>
-                            <a class="shifumi-example" href="https://www.youtube.com/watch?v=eOlIKMruyUo">comic bit</a>
-                        </div>
+                    <p>"Rock, paper, scissors" in english, "Pierre, Papier (≠ Feuille), Ciseaux" in french, "Jan-Ken-Pon" or "Janken!" in japanese or also know as "Shifumi" is a child but also an adult game.
+                            Dispite the duality aspect of the game it is also played for decisional purpose: let's ask the following question: "Who's washing the dishes tonight ?" Uh ?
+                            You don't want to but neither your roommate or partner, so "Who?" is the question ! Let's settle that with the Shifumi game then! </p>
+        
+                    <p>The origins of this game is mainly from the Asian culture as we could imagine and appearing in the 19th, but why "Shifumi" ?
+                        "Shifumi" actually came from "Hi-Fu-Mi", which corresponds to "hito" (one) "futa" (two) and "misu" (three) in japanese even though, in Japan the game is named Jan-Ken-Pon or Janken as mentionned earlier.
+                        But ...( always a "but" ) according to a Xiè Zhàozhì book, the lords from the Han dynasty were playing a similar game named "shǒushìlìng".
+                        That's it for your culture G today. Enjoy the game!
+                    </p>
+                    <div class="link">
+                        <span class="emote">🖇</span>
+                        <a class="shifumi-example" href="https://www.youtube.com/watch?v=eOlIKMruyUo">comic bit</a>
+                    </div>
                 </article>
-            </section>
-        </div>
-        <div class="modal-container" onclick="closeModal()">
-            <div class="modal-content">
-                <img class="feedbackhell" src="./assets/---.gif"/>
-                <p>You just lost 0-3 Human!</p>
             </div>
+            <div class="collapsible-block">
+                <input type="checkbox" name="collapseOrigins" id="collapseResults">
+                <label for="collapseResults">In case you think I, Bot, cheated!</label>
+                <article class="tracks">
+                    <p>This is just in case you do think I cheat, you can find just bellow the tracks of our recent games.</p>
+                    <div class="results-container">
+
+                    </div>
+                </article>
+            </div>
+        </section>
+    </div>
+    <div class="modal-container" onclick="closeModal()">
+        <div class="modal-content">
+            <img class="feedbackhell" src="./assets/---.gif"/>
+            <p>You just lost 0-3 Human!</p>
         </div>
+    </div>
     <script
         src="https://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
