@@ -215,7 +215,7 @@ input#collapseRules, input#collapseOrigins, input#collapseResults {
 }
 
 .modal-container.show {
-    visibility: visible;
+    display: block;
     position: absolute;
     top: 0;
     overflow-y: hidden;

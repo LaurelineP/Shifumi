@@ -79,11 +79,9 @@ function keepTracks( verdict, userWeapon, botWeapon ){
 
 function polyOwned() {
     if(scores.cpu === 3 && scores.user === 0){
+        console.log(' cpuuu')
         $('.modal-container').addClass('show');
     }
-    setTimeout(() => {
-        $('.modal-container').removeClass('show');
-    }, 300);
 }
 
 function closeModal() {
