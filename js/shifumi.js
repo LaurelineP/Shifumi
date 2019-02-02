@@ -84,9 +84,6 @@ function keepTracks( verdict, userWeapon, botWeapon ){
         $('.results-container').append(`<p class="track">${track}</p>`)
 
     }
-    // for (track of tracks){
-    //     $('.results-container').append(`<p class="track">${track}</p>`)
-    // }
 }
 
 function polyOwned() {
