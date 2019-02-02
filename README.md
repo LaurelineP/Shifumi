@@ -1,4 +1,4 @@
-# Shifumi Game
+# Shifumi Game - [DEMO](https://laurelinep.github.io/Shifumi/)
 ## Description:
 Build a "Shifumi Game" also known as "Rock Paper Scisors Game".\
 
