@@ -1,9 +1,9 @@
 let scores = { user : 0, cpu : 0 };
 let messages = {
-    play: ['Do you want to play?', `Do you want to loose?`, 'Are you ready for the next battle?', 'Do you want to fight?', 'Do you want to give it a shot?!', `Don't you want to loose against a mere computer?`, 'Do you want to bet on who will be superior?!', 'Would you play with me?!'],
-    win : ['Well done, for now!', 'I saw you cheated maannn!', 'Yeah, okay, I give it to you.', 'Hey, jayjaaay (GG)!',`I'll never give up against a human!`, 'Pfff, never mind.',`Come on, again?! Really?!`, `Don't you want to play fair for once?!`],
-    lost : ['Ohhh, sorry... or not.', 'Maybe next time?!', 'Keep trying...', `I'm afraid you just lost...`, 'Ahhhh... Nope, you lost!', 'The computer seems to be smarter than a human.', 'Bouuuuyyyaaahh!!','Poly owned!'],
-    draw : ['No wins, no losses.', 'Draw! Play again?!', 'And this is... uh?! A tie.', `It's a tie!`, 'Same weapon, duh!', `Next time will be the good one?`, 'One more chance, yeahh!', 'Noooooooooooo, a draw!']
+    play: ['Do you want to play ?', `Do you want to loose ?`, 'Are you ready for the next battle ?', 'Do you want to fight ?', 'Do you want to give it a shot ?!', `Would you be my inferior guest ?`, 'Who will be your superior here ?!', 'Would you play with me ?!'],
+    win : ['Well done, for now!', 'I saw you cheated maannn !', 'Yeah, okay, I give it to you.', 'Hey, jayjaaay (GG)!',`I'll never give up, human, nevaaa !`, 'Pfff, never mind.',`Come on, again ?! Really ?!`, `Play fair for once, no ?!`],
+    lost : ['Ohhh, sorry... or not.', 'Maybe next time ?!', 'Keep trying...', `I'm afraid you just lost...`, 'Ahhhh... Nope, you lost !', 'IBot seems to be smarter you.', 'Bouuuuyyyaaahh!!','Poly owned !'],
+    draw : ['No winner, no loser.', 'Draw! Play again !!', 'And this is... uh ?! A tie.', `It's a tiiiie!`, 'Same weapon, duuuh !', `Stop copyiiiing !`, 'One more chance, yeahh !', 'Noooooooooooo, a draw !']
 }
 let tracks = [];
 $('document').ready( function(){
@@ -65,21 +65,32 @@ function createEmote ( player, weapon ) {
 }
 
 function keepTracks( verdict, userWeapon, botWeapon ){
+    let track;
     if( verdict === 'tie'){
-        tracks.push(`You both picked "${userWeapon}" — it's a ${verdict} !`)
+        track = `You both picked "${userWeapon}" — it's a ${verdict} !`
+        actionsOnTracks(track)
+
     } else if ( verdict === 'You' || verdict === 'IBot' ) {
-        tracks.push(`You picked "${userWeapon}" versus IBot with '${botWeapon}' — ${verdict} wins !`)
+        track = `You picked "${userWeapon}" versus IBot with '${botWeapon}' — ${verdict} wins !`
+        actionsOnTracks(track)
+
     } else {
-        tracks.push('You put an end to the game.')
+        track = 'You put an end to the game.'
+        actionsOnTracks(track)
+
     }
-    for (track of tracks){
+    function actionsOnTracks(track){
+        tracks.push(track)
         $('.results-container').append(`<p class="track">${track}</p>`)
+
     }
+    // for (track of tracks){
+    //     $('.results-container').append(`<p class="track">${track}</p>`)
+    // }
 }
 
 function polyOwned() {
     if(scores.cpu === 3 && scores.user === 0){
-        console.log(' cpuuu')
         $('.modal-container').addClass('show');
     }
 }

@@ -2,6 +2,18 @@
     outline: none;
 }
 
+body {
+    margin: 0;
+}
+
+.pic-bg {
+    background-image: url('../assets/dual.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
 a:visited, a:link {
     text-decoration: none;
     color: inherit;
@@ -12,15 +24,34 @@ a:visited, a:link {
     font-size: 3em;
 }
 
-.container {
+.shifumi {
+    position: absolute;
+    font-family: "Monoton";
+    top: 25vh;
+    left: 20vw;
+    font-size: 10vw;
+    padding: 10px 30px;
+    text-align: center;
+    background-color: #FFF;
+    mix-blend-mode: screen;
+}
+
+.container-general {
+    margin: 0 auto;
+    width: 570px;
+    padding-top: 65vh;
+    padding-bottom: 100px;
+}
+
+.container-content {
     width: 500px;
+    background: rgba(255,255,255,0.9);
     height: 50%;
-    margin: auto;
     padding: 30px;
     border-radius: 5px;
 }
-
 .message {
+    font: 1.5em 'VT323';
     padding: 20px;
     text-align: center;
     background: #DDD;
@@ -30,6 +61,7 @@ a:visited, a:link {
 .scores {
     width: 300px;
     margin: -100px auto;
+    font-family: 'VT323';
     text-align: center;
     font-size: 5em;
     line-height: 1.5;
@@ -49,12 +81,16 @@ a:visited, a:link {
    margin: 0 65px;
 }
 
+.player {
+    font: 1.5em "Cabin Sketch", cursive;
+}
+
 .player.user {
     margin-left: 75px;
 }
 
 .player.bot {
-    margin-left: 50px;
+    margin-left: 90px;
 }
 
 .score {
@@ -68,6 +104,10 @@ a:visited, a:link {
 
 .score::before {
     font-size: 13px;
+}
+
+.score.user-score {
+    /* background-color: #DBBC73!important; */
 }
 
 .game-playing {
@@ -92,16 +132,23 @@ a:visited, a:link {
     width: 100px;
     border-radius: 50px;
     margin: 0 15px;
+    font-size: 0.7em;
 }
 
 .resetScore {
-    padding: 5px 30px;
+    padding: 10px 30px;
     font-size: 1em;
     margin-left: 40%;
+    border: none;
+    border-radius: 2px;
+    color: #FFF;
+    box-shadow: 0 0 3px 1px #999;
+    background-color: #57ace7;
 }
 
 .collapsible-container {
-    margin-top: 10%;
+    background: #fff;
+    margin-top: 5%;
     padding: 30px;
     box-shadow : 0 1px 5px 1px #EEE;
     border: solid 0.5px #EEE;
@@ -122,6 +169,13 @@ li .hand {
     border-radius: 50px;
     box-shadow: 0 1.3px 1px 1px #DDD;
     font-size: 2em;
+}
+label.title{
+    font-family: 'Krub';
+    font-weight: bolder;
+    text-align: center;
+    color: black;
+    font-weight: bold;
 }
 
 .collapsible-container label {
@@ -146,8 +200,8 @@ li .hand {
     background: #EEE;
 }
 
-.collapsible-container input:checked + label:hover {
-    background: #378;
+.collapsible-container input:checked + label {
+    background:#57ace7;
     color: #EEE;
 }
 
@@ -155,11 +209,16 @@ input#collapseRules, input#collapseOrigins, input#collapseResults {
     display: none;
 }
 
+article p span {
+   font: 2em "Monoton";
+}
+
 .collapsible-container article {
     position: relative;
     background: rgba(0, 0, 0, 0.02);
     overflow: hidden;
     height: 0;
+    font-family: "Krub";
     border-radius: 2px;
     font-style: italic;
     transition:
@@ -171,7 +230,17 @@ input#collapseRules, input#collapseOrigins, input#collapseResults {
     padding: 10px 30px;
 }
 
+.results-container {
+    width: 400px;
+    margin: 0 auto;
+}
 
+.results-container p {
+    margin: 0;
+    background: rgba(87, 172, 231,0.3);
+    border-radius: 2px;
+    margin-bottom: 2px;
+}
 
 .collapsible-container input:checked ~ article {
     transition:
@@ -185,7 +254,7 @@ input#collapseRules, input#collapseOrigins, input#collapseResults {
 }
 
 .collapsible-container input:checked ~ .origins {
-    height: 500px;
+    height: 720px;
 }
 
 .collapsible-container input:checked ~ .tracks {
@@ -218,7 +287,10 @@ input#collapseRules, input#collapseOrigins, input#collapseResults {
     display: block;
     position: absolute;
     top: 0;
+    left: 0;
     overflow-y: hidden;
+    padding-top: 60vh;
+    padding-bottom: 100px;
 }
 
 .modal-content {
