@@ -132,18 +132,23 @@ a:visited, a:link {
     width: 100px;
     border-radius: 50px;
     margin: 0 15px;
-    font-size: 0.7em;
+    font: 1em "Cabin Sketch", cursive;
 }
 
 .resetScore {
     padding: 10px 30px;
-    font-size: 1em;
     margin-left: 40%;
     border: none;
     border-radius: 2px;
     color: #FFF;
-    box-shadow: 0 0 3px 1px #999;
+    box-shadow: 0 1px 0 1px #4a7da2;
     background-color: #57ace7;
+    font: 1em "Cabin Sketch", cursive;
+    text-transform: uppercase;
+}
+
+.resetScore:hover {
+    background-color: #4d9dd7;
 }
 
 .collapsible-container {
