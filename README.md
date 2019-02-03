@@ -1,6 +1,9 @@
 # Shifumi Game - [DEMO](https://laurelinep.github.io/Shifumi/)
 ## Description:
-Build a "Shifumi Game" also known as "Rock Paper Scisors Game".\
+Build a "Shifumi Game" also known as "Rock Paper Scisors Game".
+
+![Page preview](./prohect-preview?raw=true "Preview")
+
 
 ## Goal/Tasks:
 + Use your basic knowledge of JavaScript, HTML, CSS to create a Rock, Paper, Scissors game,
