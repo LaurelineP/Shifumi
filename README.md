@@ -2,7 +2,8 @@
 ## Description:
 Build a "Shifumi Game" also known as "Rock Paper Scisors Game".
 
-![Page preview](./prohect-preview?raw=true "Preview")
+![Page preview](./project-preview.jpg)
+
 
 
 ## Goal/Tasks:
